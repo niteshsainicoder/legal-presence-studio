@@ -1,96 +1,87 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Legal Professional Design System */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors */
+    --background: 248 250 252; /* slate-50 */
+    --foreground: 15 23 42; /* slate-900 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 255 255 255; /* white */
+    --card-foreground: 15 23 42; /* slate-900 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 255 255 255; /* white */
+    --popover-foreground: 15 23 42; /* slate-900 */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Legal Professional Colors */
+    --primary: 220 78 15; /* Deep Navy #1E3A8A */
+    --primary-foreground: 248 250 252; /* slate-50 */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 226 232 240; /* slate-200 */
+    --secondary-foreground: 51 65 85; /* slate-700 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 241 245 249; /* slate-100 */
+    --muted-foreground: 100 116 139; /* slate-500 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 85 38; /* Gold #C28E0E */
+    --accent-foreground: 255 255 255; /* white */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 226 232 240; /* slate-200 */
+    --input: 226 232 240; /* slate-200 */
+    --ring: 220 78 15; /* Deep Navy */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 248 250 252;
+    --sidebar-foreground: 51 65 85;
+    --sidebar-primary: 220 78 15;
+    --sidebar-primary-foreground: 248 250 252;
+    --sidebar-accent: 241 245 249;
+    --sidebar-accent-foreground: 51 65 85;
+    --sidebar-border: 226 232 240;
+    --sidebar-ring: 220 78 15;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 15 23 42;
+    --foreground: 248 250 252;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 220 78 25;
+    --primary-foreground: 248 250 252;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 51 65 85;
+    --secondary-foreground: 226 232 240;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 85 45;
+    --accent-foreground: 15 23 42;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 220 78 25;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 15 23 42;
+    --sidebar-foreground: 226 232 240;
+    --sidebar-primary: 220 78 25;
+    --sidebar-primary-foreground: 248 250 252;
+    --sidebar-accent: 30 41 59;
+    --sidebar-accent-foreground: 226 232 240;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 220 78 25;
   }
 }
 
@@ -100,6 +91,158 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Legal Professional Component Styles */
+  .hero-section {
+    @apply relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-black/20;
+  }
+
+  .hero-content {
+    @apply relative z-10 container mx-auto px-4 py-24 lg:py-32 text-center text-white;
+  }
+
+  .hero-headline {
+    @apply font-playfair text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6;
+  }
+
+  .hero-subheadline {
+    @apply text-xl md:text-2xl text-navy-100 mb-8 max-w-3xl mx-auto;
+  }
+
+  .trust-stat {
+    @apply text-center p-6 bg-white rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow;
+  }
+
+  .trust-stat-number {
+    @apply font-playfair text-3xl md:text-4xl font-bold text-navy-900 mb-2;
+  }
+
+  .trust-stat-label {
+    @apply text-slate-600 font-medium;
+  }
+
+  .practice-card {
+    @apply bg-white rounded-xl p-8 shadow-sm border border-slate-200 hover:shadow-lg hover:border-gold-200 transition-all duration-300 group;
+  }
+
+  .practice-card-icon {
+    @apply w-12 h-12 text-gold-600 mb-4 group-hover:text-gold-700 transition-colors;
+  }
+
+  .practice-card-title {
+    @apply font-playfair text-xl font-semibold text-navy-900 mb-3;
+  }
+
+  .practice-card-description {
+    @apply text-slate-600 leading-relaxed;
+  }
+
+  .section-heading {
+    @apply font-playfair text-3xl md:text-4xl font-bold text-navy-900 text-center mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg text-slate-600 text-center max-w-2xl mx-auto mb-12;
+  }
+
+  .btn-primary {
+    @apply bg-navy-900 hover:bg-navy-800 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent hover:bg-navy-50 text-navy-900 font-semibold px-8 py-4 rounded-lg border-2 border-navy-900 transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-accent {
+    @apply bg-gold-600 hover:bg-gold-700 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .contact-form {
+    @apply bg-white rounded-xl p-8 shadow-lg border border-slate-200;
+  }
+
+  .form-group {
+    @apply mb-6;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-navy-900 mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors resize-vertical min-h-[120px];
+  }
+
+  .form-select {
+    @apply w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-colors bg-white;
+  }
+}
+
+@layer utilities {
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .animate-on-scroll.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Print styles for legal documents */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-friendly {
+    background: white !important;
+    color: black !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    break-after: avoid;
+  }
+  
+  p, li {
+    orphans: 2;
+    widows: 2;
   }
 }

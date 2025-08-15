@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Legal theme colors
+				navy: {
+					50: 'hsl(220, 100%, 95%)',
+					100: 'hsl(220, 100%, 90%)',
+					200: 'hsl(220, 100%, 80%)',
+					300: 'hsl(220, 100%, 70%)',
+					400: 'hsl(220, 100%, 60%)',
+					500: 'hsl(220, 100%, 50%)',
+					600: 'hsl(220, 78%, 40%)',
+					700: 'hsl(220, 78%, 30%)',
+					800: 'hsl(220, 78%, 20%)',
+					900: 'hsl(220, 78%, 15%)',
+					950: 'hsl(220, 78%, 10%)'
+				},
+				gold: {
+					50: 'hsl(45, 100%, 95%)',
+					100: 'hsl(45, 100%, 90%)',
+					200: 'hsl(45, 100%, 80%)',
+					300: 'hsl(45, 100%, 70%)',
+					400: 'hsl(45, 100%, 60%)',
+					500: 'hsl(45, 85%, 50%)',
+					600: 'hsl(45, 85%, 40%)',
+					700: 'hsl(45, 85%, 35%)',
+					800: 'hsl(45, 85%, 25%)',
+					900: 'hsl(45, 85%, 15%)'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +89,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				playfair: ['Playfair Display', 'serif'],
+				inter: ['Inter', 'sans-serif'],
+				sans: ['Inter', 'sans-serif'],
+				serif: ['Playfair Display', 'serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +117,42 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in-right': {
+					'0%': {
+						transform: 'translateX(100%)'
+					},
+					'100%': {
+						transform: 'translateX(0)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-in-right': 'slide-in-right 0.3s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out'
 			}
 		}
 	},

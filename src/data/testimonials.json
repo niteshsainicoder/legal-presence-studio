@@ -1,0 +1,43 @@
+
+[
+  {
+    "id": 1,
+    "name": "A.B.",
+    "title": "Business Owner",
+    "content": "John provided exceptional legal guidance during our company merger. His attention to detail and strategic approach made a complex process seamless.",
+    "rating": 5,
+    "category": "Corporate Law"
+  },
+  {
+    "id": 2,
+    "name": "C.D.",
+    "title": "Real Estate Developer",
+    "content": "Outstanding support on our property acquisition. The due diligence was thorough, and all documentation was handled professionally.",
+    "rating": 5,
+    "category": "Real Estate"
+  },
+  {
+    "id": 3,
+    "name": "E.F.",
+    "title": "Individual Client",
+    "content": "Excellent representation in my civil dispute. John's expertise and dedication resulted in a favorable outcome. Highly recommended.",
+    "rating": 5,
+    "category": "Civil Litigation"
+  },
+  {
+    "id": 4,
+    "name": "G.H.",
+    "title": "Startup Founder",
+    "content": "Invaluable assistance with contract negotiations and legal compliance. John's commercial acumen complemented his legal expertise perfectly.",
+    "rating": 5,
+    "category": "Contract Law"
+  },
+  {
+    "id": 5,
+    "name": "I.J.",
+    "title": "Family Client",
+    "content": "Compassionate and professional handling of our family matter. The mediation process was handled with sensitivity and expertise.",
+    "rating": 5,
+    "category": "Family Law"
+  }
+]

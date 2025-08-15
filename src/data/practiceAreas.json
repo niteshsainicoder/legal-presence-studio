@@ -1,0 +1,51 @@
+
+[
+  {
+    "id": "corporate-commercial",
+    "title": "Corporate & Commercial Law",
+    "icon": "Building2",
+    "description": "Comprehensive legal services for businesses including company formation, compliance, mergers & acquisitions, and corporate governance.",
+    "details": "Expert guidance on corporate structuring, regulatory compliance, joint ventures, and commercial transactions. We help businesses navigate complex legal landscapes with confidence.",
+    "keywords": ["Corporate Law", "Business Formation", "M&A", "Compliance"]
+  },
+  {
+    "id": "civil-litigation",
+    "title": "Civil Litigation",
+    "icon": "Scale",
+    "description": "Strategic representation in civil disputes, contract breaches, property disputes, and commercial litigation matters.",
+    "details": "Experienced advocacy in courts and tribunals with a track record of successful resolutions. We approach each case with thorough preparation and strategic thinking.",
+    "keywords": ["Civil Litigation", "Dispute Resolution", "Court Representation", "Legal Strategy"]
+  },
+  {
+    "id": "contract-drafting",
+    "title": "Contract Drafting & Review",
+    "icon": "FileText",
+    "description": "Meticulous contract preparation, review, and negotiation to protect your interests and minimize legal risks.",
+    "details": "From simple agreements to complex commercial contracts, we ensure every clause serves your best interests while maintaining enforceability.",
+    "keywords": ["Contract Law", "Legal Drafting", "Agreement Review", "Risk Management"]
+  },
+  {
+    "id": "property-real-estate",
+    "title": "Property & Real Estate",
+    "icon": "Home",
+    "description": "Complete real estate legal services including property transactions, title verification, and real estate disputes.",
+    "details": "Comprehensive support for buying, selling, leasing, and developing real estate. We handle due diligence, documentation, and dispute resolution.",
+    "keywords": ["Real Estate", "Property Law", "Title Verification", "Property Disputes"]
+  },
+  {
+    "id": "family-law",
+    "title": "Family Law & Mediation",
+    "icon": "Heart",
+    "description": "Sensitive handling of family matters including divorce, custody, matrimonial disputes, and alternative dispute resolution.",
+    "details": "Compassionate legal support during difficult family transitions. We prioritize amicable resolutions through mediation and negotiation.",
+    "keywords": ["Family Law", "Divorce", "Child Custody", "Mediation"]
+  },
+  {
+    "id": "consumer-protection",
+    "title": "Consumer Protection",
+    "icon": "Shield",
+    "description": "Advocacy for consumer rights, product liability claims, and protection against unfair trade practices.",
+    "details": "Strong representation for consumers facing unfair business practices, defective products, or service violations. We fight for your rights and fair compensation.",
+    "keywords": ["Consumer Rights", "Product Liability", "Fair Trade", "Consumer Disputes"]
+  }
+]
