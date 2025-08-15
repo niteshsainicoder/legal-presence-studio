@@ -123,15 +123,15 @@
   }
 
   .hero-content {
-    @apply relative z-10 container mx-auto px-4 py-24 lg:py-32 text-center text-white;
+    @apply relative z-10 container mx-auto px-4 py-20 lg:py-24 text-center text-white;
   }
 
   .hero-headline {
-    @apply font-playfair text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6;
+    @apply font-playfair text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] mb-6;
   }
 
   .hero-subheadline {
-    @apply text-xl md:text-2xl text-navy-100 mb-8 max-w-3xl mx-auto;
+    @apply text-xl md:text-2xl text-navy-100 mb-6 max-w-3xl mx-auto;
   }
 
   .trust-stat {

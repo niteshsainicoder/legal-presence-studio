@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Download } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,6 +10,27 @@ const Footer = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const downloadVCard = () => {
+    // TODO: Implement actual vCard download
+    const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Adv. John Doe
+ORG:John Doe Legal Services
+TEL:+91 98765 43210
+EMAIL:contact@johndoelegal.com
+ADR:;;12 Example Chambers, Connaught Place;New Delhi;;110001;India
+URL:https://johndoelegal.com
+END:VCARD`;
+    
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'john-doe-advocate.vcf';
+    a.click();
+    window.URL.revokeObjectURL(url);
   };
 
   return (
@@ -26,24 +47,42 @@ const Footer = () => {
               and individuals. Your success is our commitment.
             </p>
             
-            {/* TODO: Replace with actual contact information */}
-            <div className="space-y-3">
+            {/* Bar Council Disclosure - moved up for prominence */}
+            <div className="bg-navy-800 p-4 rounded-lg mb-6 border-l-4 border-gold-400">
+              <div className="text-white font-medium mb-1">Bar Enrollment: D/1234/2015</div>
+              <div className="text-navy-200 text-sm">Registered with Bar Council of Delhi</div>
+            </div>
+            
+            {/* Contact with download button */}
+            <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-gold-400" />
-                <span className="text-navy-200">contact@johndoelegal.com</span>
+                <Mail className="w-5 h-5 text-gold-400" aria-hidden="true" />
+                <a href="mailto:contact@johndoelegal.com" className="text-navy-200 hover:text-gold-300 transition-colors">
+                  contact@johndoelegal.com
+                </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-gold-400" />
-                <span className="text-navy-200">+91 98765 43210</span>
+                <Phone className="w-5 h-5 text-gold-400" aria-hidden="true" />
+                <a href="tel:+919876543210" className="text-navy-200 hover:text-gold-300 transition-colors">
+                  +91 98765 43210
+                </a>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gold-400 mt-1" />
+                <MapPin className="w-5 h-5 text-gold-400 mt-1" aria-hidden="true" />
                 <span className="text-navy-200">
                   12 Example Chambers, Connaught Place<br />
                   New Delhi 110001
                 </span>
               </div>
             </div>
+
+            <button
+              onClick={downloadVCard}
+              className="inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors focus:ring-2 focus:ring-gold-300"
+            >
+              <Download className="w-4 h-4" aria-hidden="true" />
+              Save Contact
+            </button>
           </div>
 
           {/* Quick Links */}
@@ -60,7 +99,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-navy-200 hover:text-gold-400 transition-colors"
+                    className="text-navy-200 hover:text-gold-400 transition-colors text-left focus:outline-none focus:ring-2 focus:ring-gold-300 rounded px-1"
                   >
                     {link.label}
                   </button>
@@ -82,7 +121,7 @@ const Footer = () => {
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-navy-200 hover:text-gold-400 transition-colors"
+                    className="text-navy-200 hover:text-gold-400 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300 rounded px-1"
                   >
                     {item}
                   </a>
@@ -97,24 +136,24 @@ const Footer = () => {
                 {/* TODO: Replace with actual social media links */}
                 <a
                   href="#"
-                  className="p-2 bg-navy-800 hover:bg-gold-600 rounded-lg transition-colors"
+                  className="p-2 bg-navy-800 hover:bg-gold-600 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" aria-hidden="true" />
                 </a>
                 <a
                   href="#"
-                  className="p-2 bg-navy-800 hover:bg-gold-600 rounded-lg transition-colors"
+                  className="p-2 bg-navy-800 hover:bg-gold-600 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300"
                   aria-label="Twitter"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Twitter className="w-5 h-5" aria-hidden="true" />
                 </a>
                 <a
                   href="#"
-                  className="p-2 bg-navy-800 hover:bg-gold-600 rounded-lg transition-colors"
+                  className="p-2 bg-navy-800 hover:bg-gold-600 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-5 h-5" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -124,19 +163,13 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-navy-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-navy-300 text-sm">
+            <div className="text-navy-200 text-sm">
               © {currentYear} Adv. John Doe. All rights reserved.
-            </div>
-            
-            {/* Bar Council Disclosure */}
-            <div className="text-navy-300 text-sm text-center md:text-right">
-              <div>Bar Enrollment: D/1234/2015</div>
-              <div>Registered with Bar Council of Delhi</div>
             </div>
           </div>
 
-          {/* Legal Disclaimers */}
-          <div className="mt-6 text-xs text-navy-400 text-center max-w-4xl mx-auto leading-relaxed">
+          {/* Legal Disclaimers - improved contrast */}
+          <div className="mt-6 text-sm text-navy-200 text-center max-w-4xl mx-auto leading-relaxed">
             <p className="mb-2">
               <strong>Disclaimer:</strong> This website provides general information and is not legal advice. 
               No attorney-client relationship is formed by using this website or contacting via forms. 
