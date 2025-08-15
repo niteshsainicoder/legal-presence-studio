@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Download, Award, Globe, Users } from 'lucide-react';
+import { Download, Award, Globe, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const About = () => {
