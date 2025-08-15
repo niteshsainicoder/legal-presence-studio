@@ -147,11 +147,15 @@
   }
 
   .practice-card {
-    @apply bg-white rounded-xl p-8 shadow-sm border border-slate-200 hover:shadow-lg hover:border-gold-200 transition-all duration-300 group;
+    @apply bg-white rounded-xl p-8 shadow-sm border border-slate-200 hover:shadow-lg hover:border-gold-200 transition-all duration-300;
   }
 
   .practice-card-icon {
-    @apply w-12 h-12 text-gold-600 mb-4 group-hover:text-gold-700 transition-colors;
+    @apply w-12 h-12 text-gold-600 mb-4 transition-colors;
+  }
+
+  .practice-card:hover .practice-card-icon {
+    @apply text-gold-700;
   }
 
   .practice-card-title {
