@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="hero-section min-h-screen flex items-center">
+    <section id="home" className="hero-section min-h-screen mt-10 flex items-center">
       <div className="hero-overlay"></div>
       
       {/* Background pattern */}
@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-6">
             <div className="w-24 h-24 bg-white/30 rounded-full flex items-center justify-center">
-              <span className="text-2xl font-playfair font-bold text-white">JD</span>
+              <span className="text-2xl font-playfair font-bold text-white">RJ</span>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Hero = () => {
         <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="p-4">
-              <div className="text-2xl md:text-3xl font-playfair font-bold text-gold-300 mb-1">10+</div>
+              <div className="text-2xl md:text-3xl font-playfair font-bold text-gold-300 mb-1">15+</div>
               <div className="text-sm text-navy-100 mb-1">Years Experience</div>
               <div className="text-xs text-navy-300">verified</div>
             </div>

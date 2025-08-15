@@ -44,11 +44,11 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-6 text-xs lg:text-sm">
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" aria-hidden="true" />
-              <span>contact@johndoelegal.com</span>
+              <span>jainrahul5980@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" aria-hidden="true" />
-              <span>+91 98765 43210</span>
+              <span>+91 98879 85632</span>
             </div>
           </div>
           
@@ -92,7 +92,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo - TODO: Replace with actual logo/branding */}
           <div className="font-playfair text-2xl font-bold text-navy-900">
-            Adv. John Doe
+            Adv. Rahul Jain
           </div>
 
           {/* Desktop Navigation */}

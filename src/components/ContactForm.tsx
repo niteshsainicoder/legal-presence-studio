@@ -26,34 +26,62 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // TODO: Replace with actual form submission logic
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      console.log('Form submitted:', formData);
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        consultationType: '',
-        preferredDate: '',
-        preferredTime: '',
-        message: '',
-        acceptTerms: false
-      });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+ // helper: safely build a mailto URL
+const buildMailto = (to: string, subject: string, body: string) => {
+  const s = encodeURIComponent(subject);
+  const b = encodeURIComponent(body);
+  return `mailto:${to}?subject=${s}&body=${b}`;
+};
+
+const CONTACT_EMAIL = 'jainrahul5980@gmail.com';
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  // Basic client-side validation
+  if (!formData.name || !formData.email || !formData.acceptTerms) {
+    setSubmitStatus('error');
+    return;
+  }
+
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+
+  const subject = `Consultation Request from ${formData.name}`;
+  const lines = [
+    `Name: ${formData.name}`,
+    `Email: ${formData.email}`,
+    `Phone: ${formData.phone || '-'}`,
+    `Consultation Type: ${formData.consultationType || '-'}`,
+    `Preferred Date: ${formData.preferredDate || '-'}`,
+    `Preferred Time: ${formData.preferredTime || '-'}`,
+    `Message:`,
+    `${(formData.message || '').slice(0, 800)}` // keep it short for mailto
+  ];
+  const body = lines.join('\n');
+
+  // Try opening the user's email client
+  const mailtoURL = buildMailto(CONTACT_EMAIL, subject, body);
+
+  const opened = window.open(mailtoURL, '_self');
+
+  window.setTimeout(() => {
+ 
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      consultationType: '',
+      preferredDate: '',
+      preferredTime: '',
+      message: '',
+      acceptTerms: false
+    });
+    setSubmitStatus('success'); // treat as "handed off" to email client
+    setIsSubmitting(false);
+  }, 2000);
+};
+
 
   return (
     <section id="contact" className="py-20 bg-slate-50">
@@ -79,9 +107,9 @@ const ContactForm = () => {
                 <div>
                   <div className="font-semibold text-navy-900 mb-1">Office Address</div>
                   <div className="text-slate-600">
-                    12 Example Chambers<br />
-                    Connaught Place<br />
-                    New Delhi 110001
+                  Jain Mandir Road<br />
+                    Tijara<br />
+                    301411
                   </div>
                 </div>
               </div>
@@ -90,7 +118,7 @@ const ContactForm = () => {
                 <Phone className="w-6 h-6 text-gold-600 flex-shrink-0" />
                 <div>
                   <div className="font-semibold text-navy-900 mb-1">Phone</div>
-                  <div className="text-slate-600">+91 98765 43210</div>
+                  <div className="text-slate-600">+91 98879 85632</div>
                 </div>
               </div>
 
@@ -98,7 +126,7 @@ const ContactForm = () => {
                 <Mail className="w-6 h-6 text-gold-600 flex-shrink-0" />
                 <div>
                   <div className="font-semibold text-navy-900 mb-1">Email</div>
-                  <div className="text-slate-600">contact@johndoelegal.com</div>
+                  <div className="text-slate-600">jainrahul5980@gmail.com</div>
                 </div>
               </div>
 
@@ -108,7 +136,7 @@ const ContactForm = () => {
                   <div className="font-semibold text-navy-900 mb-1">Office Hours</div>
                   <div className="text-slate-600">
                     Monday - Friday: 9:00 AM - 6:00 PM<br />
-                    Saturday: 9:00 AM - 2:00 PM<br />
+                    Saturday: 9:00 AM - 4:00 PM<br />
                     Sunday: By Appointment Only
                   </div>
                 </div>
@@ -121,7 +149,7 @@ const ContactForm = () => {
                 className="w-full btn-accent"
                 onClick={() => {
                   // TODO: Replace with actual WhatsApp link
-                  window.open('https://wa.me/919876543210', '_blank');
+                  window.open('https://wa.me/9887985632', '_blank');
                 }}
               >
                 WhatsApp Consultation
@@ -131,7 +159,6 @@ const ContactForm = () => {
                 variant="outline" 
                 className="w-full btn-secondary"
                 onClick={() => {
-                  // TODO: Replace with actual vCard download
                   console.log('Download vCard clicked');
                 }}
               >
@@ -304,12 +331,6 @@ const ContactForm = () => {
                 </div>
               )}
 
-              {/* reCAPTCHA Placeholder */}
-              <div className="mt-4 text-center">
-                <div className="text-sm text-slate-500">
-                  Protected by reCAPTCHA (Integration Placeholder)
-                </div>
-              </div>
             </form>
           </div>
         </div>

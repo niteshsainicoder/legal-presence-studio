@@ -60,7 +60,7 @@ const PracticeAreas = () => {
               Need Legal Consultation?
             </h3>
             <p className="text-slate-600 mb-6 leading-relaxed">
-              Schedule a free 15-minute consultation to discuss your legal needs. 
+              Schedule a  15-minute consultation to discuss your legal needs. 
               Get professional guidance tailored to your specific situation.
             </p>
             <button 
@@ -70,7 +70,7 @@ const PracticeAreas = () => {
                 window.open('https://calendly.com/demo', '_blank');
               }}
             >
-              Schedule Free Consultation
+              Schedule a Consultation
             </button>
             <p className="text-sm text-slate-500 mt-3">
               * No attorney-client relationship is formed by scheduling a consultation.

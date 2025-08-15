@@ -16,19 +16,19 @@ const Footer = () => {
     // TODO: Implement actual vCard download
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Adv. John Doe
-ORG:John Doe Legal Services
+FN:Adv. Rahul Jain 
+ORG:Rahuk Jain Legal Services
 TEL:+91 98765 43210
-EMAIL:contact@johndoelegal.com
-ADR:;;12 Example Chambers, Connaught Place;New Delhi;;110001;India
-URL:https://johndoelegal.com
+EMAIL:jainrahul5980@gmail.com
+ADR:;;Jain Mandir Road; TIjara;;301411;India
+URL:https://rahuljainadv.com
 END:VCARD`;
     
     const blob = new Blob([vCardData], { type: 'text/vcard' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'john-doe-advocate.vcf';
+    a.download = 'RahulJain-advocate.vcf';
     a.click();
     window.URL.revokeObjectURL(url);
   };
@@ -40,7 +40,7 @@ END:VCARD`;
           {/* Brand & Contact */}
           <div className="lg:col-span-2">
             <div className="font-playfair text-2xl font-bold mb-4">
-              Adv. John Doe
+              Adv. Rahul Jain
             </div>
             <p className="text-navy-200 mb-6 max-w-md">
               Trusted legal counsel providing comprehensive legal services to businesses 
@@ -49,8 +49,8 @@ END:VCARD`;
             
             {/* Bar Council Disclosure - moved up for prominence */}
             <div className="bg-navy-800 p-4 rounded-lg mb-6 border-l-4 border-gold-400">
-              <div className="text-white font-medium mb-1">Bar Enrollment: D/1234/2015</div>
-              <div className="text-navy-200 text-sm">Registered with Bar Council of Delhi</div>
+              <div className="text-white font-medium mb-1">Bar Enrollment: R/1570/2011</div>
+              <div className="text-navy-200 text-sm">Registered with Bar Council of Rajasthan</div>
             </div>
             
             {/* Contact with download button */}
@@ -58,20 +58,20 @@ END:VCARD`;
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold-400" aria-hidden="true" />
                 <a href="mailto:contact@johndoelegal.com" className="text-navy-200 hover:text-gold-300 transition-colors">
-                  contact@johndoelegal.com
+                  jainrahul5980@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gold-400" aria-hidden="true" />
                 <a href="tel:+919876543210" className="text-navy-200 hover:text-gold-300 transition-colors">
-                  +91 98765 43210
+                  +91 9887985632
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold-400 mt-1" aria-hidden="true" />
                 <span className="text-navy-200">
-                  12 Example Chambers, Connaught Place<br />
-                  New Delhi 110001
+           Jain Mandir Road<br />
+                  Tijara , 301411
                 </span>
               </div>
             </div>
@@ -110,27 +110,10 @@ END:VCARD`;
 
           {/* Legal Pages */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
-            <ul className="space-y-2">
-              {[
-                'Privacy Policy',
-                'Terms of Service',
-                'Disclaimer',
-                'Cookie Policy'
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="text-navy-200 hover:text-gold-400 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300 rounded px-1"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+         
 
             {/* Social Links */}
-            <div className="mt-6">
+            <div className="mt-0">
               <h4 className="font-semibold mb-3">Follow Us</h4>
               <div className="flex gap-3">
                 {/* TODO: Replace with actual social media links */}
@@ -164,7 +147,7 @@ END:VCARD`;
         <div className="border-t border-navy-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-navy-200 text-sm">
-              © {currentYear} Adv. John Doe. All rights reserved.
+              © {currentYear} Adv. Rahul Jain . All rights reserved.
             </div>
           </div>
 
