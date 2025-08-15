@@ -26,61 +26,61 @@ const ContactForm = () => {
     }));
   };
 
- // helper: safely build a mailto URL
-const buildMailto = (to: string, subject: string, body: string) => {
-  const s = encodeURIComponent(subject);
-  const b = encodeURIComponent(body);
-  return `mailto:${to}?subject=${s}&body=${b}`;
-};
+  // helper: safely build a mailto URL
+  const buildMailto = (to: string, subject: string, body: string) => {
+    const s = encodeURIComponent(subject);
+    const b = encodeURIComponent(body);
+    return `mailto:${to}?subject=${s}&body=${b}`;
+  };
 
-const CONTACT_EMAIL = 'jainrahul5980@gmail.com';
+  const CONTACT_EMAIL = 'jainrahul5980@gmail.com';
 
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  // Basic client-side validation
-  if (!formData.name || !formData.email || !formData.acceptTerms) {
-    setSubmitStatus('error');
-    return;
-  }
+    // Basic client-side validation
+    if (!formData.name || !formData.email || !formData.acceptTerms) {
+      setSubmitStatus('error');
+      return;
+    }
 
-  setIsSubmitting(true);
-  setSubmitStatus(null);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-  const subject = `Consultation Request from ${formData.name}`;
-  const lines = [
-    `Name: ${formData.name}`,
-    `Email: ${formData.email}`,
-    `Phone: ${formData.phone || '-'}`,
-    `Consultation Type: ${formData.consultationType || '-'}`,
-    `Preferred Date: ${formData.preferredDate || '-'}`,
-    `Preferred Time: ${formData.preferredTime || '-'}`,
-    `Message:`,
-    `${(formData.message || '').slice(0, 800)}` // keep it short for mailto
-  ];
-  const body = lines.join('\n');
+    const subject = `Consultation Request from ${formData.name}`;
+    const lines = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone || '-'}`,
+      `Consultation Type: ${formData.consultationType || '-'}`,
+      `Preferred Date: ${formData.preferredDate || '-'}`,
+      `Preferred Time: ${formData.preferredTime || '-'}`,
+      `Message:`,
+      `${(formData.message || '').slice(0, 800)}` // keep it short for mailto
+    ];
+    const body = lines.join('\n');
 
-  // Try opening the user's email client
-  const mailtoURL = buildMailto(CONTACT_EMAIL, subject, body);
+    // Try opening the user's email client
+    const mailtoURL = buildMailto(CONTACT_EMAIL, subject, body);
 
-  const opened = window.open(mailtoURL, '_self');
+    const opened = window.open(mailtoURL, '_self');
 
-  window.setTimeout(() => {
- 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      consultationType: '',
-      preferredDate: '',
-      preferredTime: '',
-      message: '',
-      acceptTerms: false
-    });
-    setSubmitStatus('success'); // treat as "handed off" to email client
-    setIsSubmitting(false);
-  }, 2000);
-};
+    window.setTimeout(() => {
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        consultationType: '',
+        preferredDate: '',
+        preferredTime: '',
+        message: '',
+        acceptTerms: false
+      });
+      setSubmitStatus('success'); // treat as "handed off" to email client
+      setIsSubmitting(false);
+    }, 2000);
+  };
 
 
   return (
@@ -102,50 +102,56 @@ const handleSubmit = (e: React.FormEvent) => {
 
             <div className="space-y-6">
               {/* TODO: Replace with actual office address and contact details */}
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-gold-600 mt-1 flex-shrink-0" />
-                <div>
-                  <div className="font-semibold text-navy-900 mb-1">Office Address</div>
-                  <div className="text-slate-600">
-                  Jain Mandir Road<br />
-                    Tijara<br />
-                    301411
+              <div className='grid grid-cols-2 w-full'>
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-6 h-6 text-gold-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-navy-900 mb-1">Office Address</div>
+                    <div className="text-slate-600">
+                      Jain Mandir Road<br />
+                      Tijara<br />
+                      301411
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <Phone className="w-6 h-6 text-gold-600 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-navy-900 mb-1">Phone</div>
+                    <div className="text-slate-600">+91 98879 85632</div>
                   </div>
                 </div>
               </div>
+              <div className='grid grid-cols-2  w-full'>
 
-              <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-gold-600 flex-shrink-0" />
-                <div>
-                  <div className="font-semibold text-navy-900 mb-1">Phone</div>
-                  <div className="text-slate-600">+91 98879 85632</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-gold-600 flex-shrink-0" />
-                <div>
-                  <div className="font-semibold text-navy-900 mb-1">Email</div>
-                  <div className="text-slate-600">jainrahul5980@gmail.com</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-gold-600 mt-1 flex-shrink-0" />
-                <div>
-                  <div className="font-semibold text-navy-900 mb-1">Office Hours</div>
-                  <div className="text-slate-600">
-                    Monday - Friday: 9:00 AM - 6:00 PM<br />
-                    Saturday: 9:00 AM - 4:00 PM<br />
-                    Sunday: By Appointment Only
+                <div className="flex items-start gap-4">
+                  <Clock className="w-6 h-6 text-gold-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-navy-900 mb-1">Office Hours</div>
+                    <div className="text-slate-600">
+                      Monday - Friday: 9:00 AM - 6:00 PM<br />
+                      Saturday: 9:00 AM - 4:00 PM<br />
+                      Sunday: By Appointment Only
+                    </div>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <Mail className="w-6 h-6 text-gold-600 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-navy-900 mb-1">Email</div>
+                    <div className="text-slate-600">jainrahul5980@gmail.com</div>
+                  </div>
+                </div>
+
               </div>
+
             </div>
 
             {/* Action Buttons */}
             <div className="mt-8 space-y-4">
-              <Button 
+              <Button
                 className="w-full btn-accent"
                 onClick={() => {
                   // TODO: Replace with actual WhatsApp link
@@ -154,9 +160,9 @@ const handleSubmit = (e: React.FormEvent) => {
               >
                 WhatsApp Consultation
               </Button>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 className="w-full btn-secondary"
                 onClick={() => {
                   console.log('Download vCard clicked');
@@ -170,10 +176,11 @@ const handleSubmit = (e: React.FormEvent) => {
             {/* Map Placeholder */}
             <div className="mt-8">
               <div className="aspect-video bg-slate-200 rounded-lg flex items-center justify-center">
-                <div className="text-slate-500 text-center">
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
-                  <p>Map Integration Placeholder</p>
-                  <p className="text-sm">Replace with Google Maps embed</p>
+                <div className="text-slate-500 w-full h-full text-center">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3524.8888678640265!2d76.85105207547555!3d27.936051976052262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDU2JzA5LjgiTiA3NsKwNTEnMTMuMSJF!5e0!3m2!1sen!2sin!4v1755267737797!5m2!1sen!2sin"
+                    className='w-full h-full'
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>F
                 </div>
               </div>
             </div>
@@ -303,8 +310,8 @@ const handleSubmit = (e: React.FormEvent) => {
                     required
                   />
                   <span className="text-sm text-slate-600">
-                    I accept the <a href="#" className="text-navy-900 hover:underline">Terms & Conditions</a> and 
-                    <a href="#" className="text-navy-900 hover:underline"> Privacy Policy</a>. 
+                    I accept the <a href="#" className="text-navy-900 hover:underline">Terms & Conditions</a> and
+                    <a href="#" className="text-navy-900 hover:underline"> Privacy Policy</a>.
                     I understand that no attorney-client relationship is formed by submitting this form.
                   </span>
                 </label>

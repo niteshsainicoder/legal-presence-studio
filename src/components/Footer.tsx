@@ -150,6 +150,7 @@ END:VCARD`;
               © {currentYear} Adv. Rahul Jain . All rights reserved.
             </div>
           </div>
+        
 
           {/* Legal Disclaimers - improved contrast */}
           <div className="mt-6 text-sm text-navy-200 text-center max-w-4xl mx-auto leading-relaxed">
@@ -162,7 +163,11 @@ END:VCARD`;
               The content of this website is for informational purposes only and should not be construed 
               as legal advice. Please consult with a qualified attorney for advice regarding your specific situation.
             </p>
+             
           </div>
+            <p className='mt-7 w-full text-center'>
+            Developed By <a href="https://www.linkedin.com/in/nitesh-saini-dev/" target='_blank' className='text-blue-400 hover:underline '>Nitesh Saini </a>
+             </p>
         </div>
       </div>
     </footer>
